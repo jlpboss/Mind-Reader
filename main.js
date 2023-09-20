@@ -28,10 +28,10 @@ let state = {
     },
     drawPage0: function(){
         console.log("draw0")
-        this.makeTag ("div", "head", "div1", "container")
-        this.makeTag ("div", "headRow", "head", "row")
-        this.makeTag ("div", "headCol", "headRow", "col")
-        this.drawTitle("I can read your mind", "headRow")
+        this.makeTag ("div", "head", "div1", "container text-center")
+        this.makeTag ("div", "headRow", "head", "row justify-content-center")
+        this.makeTag ("div", "headCol", "headRow", "col-12 title")
+        this.drawTitle("I can read your mind", "headCol")
     },
     drawPage1: function(){
         //
