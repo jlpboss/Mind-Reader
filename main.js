@@ -1,9 +1,6 @@
-let div1 = document.getElementById("div1");
-
 let state = {
     currPage: 0,
     update: function () {
-        console.log("update")
         this.clearPage();
         if (this.currPage === 0){
             this.drawPage0();
@@ -20,18 +17,22 @@ let state = {
         }
     },
     clearPage: function(){
-        console.log("clear")
         let childNodes = div1.childNodes;
         for (let i = childNodes.length - 1; i >= 0; i--) {
             div1.removeChild(childNodes[i]);
         }
     },
     drawPage0: function(){
-        console.log("draw0")
         this.makeTag ("div", "head", "div1", "container text-center")
         this.makeTag ("div", "headRow", "head", "row justify-content-center")
         this.makeTag ("div", "headCol", "headRow", "col-12 title")
-        this.drawTitle("I can read your mind", "headCol")
+        this.drawText("I can read your mind", "headCol")
+        this.makeTag("footer", "foot", "div1", "footer")
+        this.makeTag ("div", "footCont", "foot", "container")
+        this.makeTag ("div", "footRow", "footCont", "row")
+        this.makeTag ("div", "footCol", "footRow", "col")
+        //this.drawText ("go button", "footCol", "position-absolute bottom-0 end-0")
+        this.makeTag ("button", "goButton", "footCol", "buttonRound position-absolute bottom-0 end-0")
     },
     drawPage1: function(){
         //
@@ -55,10 +56,11 @@ let state = {
         cont.setAttribute("class", type);
         out.appendChild(cont);
     },
-    drawTitle: function (text, where){
+    drawText: function (text, where, type = ""){
         let para = document.createElement("p");
         let node = document.createTextNode(text);
         let out = document.getElementById(where);
+        para.setAttribute("class", type);
         para.appendChild(node);
         out.appendChild(para);
     }
