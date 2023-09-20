@@ -28,7 +28,10 @@ let state = {
     },
     drawPage0: function(){
         console.log("draw0")
-        this.drawTitle("I can read your mind")
+        this.makeTag ("div", "head", "div1", "container")
+        this.makeTag ("div", "headRow", "head", "row")
+        this.makeTag ("div", "headCol", "headRow", "col")
+        this.drawTitle("I can read your mind", "headRow")
     },
     drawPage1: function(){
         //
@@ -45,11 +48,19 @@ let state = {
     drawPage5: function(){
         //
     },
-    drawTitle: function(text){
+    makeTag: function(elem, id, where, type){
+        let cont = document.createElement(elem);
+        let out = document.getElementById(where);
+        cont.setAttribute("id", id);
+        cont.setAttribute("class", type);
+        out.appendChild(cont);
+    },
+    drawTitle: function (text, where){
         let para = document.createElement("p");
         let node = document.createTextNode(text);
+        let out = document.getElementById(where);
         para.appendChild(node);
-        div1.appendChild(para);
+        out.appendChild(para);
     }
     
 }
