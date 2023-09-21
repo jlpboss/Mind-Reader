@@ -33,6 +33,7 @@ let game = {
         this.makeTag ("div", "footRow", "footCont", "row")
         this.makeTag ("div", "footCol", "footRow", "col")
         this.makeTag ("button", "goButton", "footCol", "buttonRound position-absolute bottom-0 end-0")
+        this.drawText ("Go", "goButton")
         this.makeNextEvent()
     },
     drawPage1: function(){
@@ -58,6 +59,7 @@ let game = {
         this.makeTag ("div", "footRow", "footCont", "row")
         this.makeTag ("div", "footCol", "footRow", "col")
         this.makeTag ("button", "startButton", "footCol", "buttonRound position-absolute bottom-0 end-0")
+        this.drawText ("<--", "startButton")
         this.makeStartEvent()
     },
     drawPage2: function(){
@@ -70,6 +72,7 @@ let game = {
         this.makeTag ("div", "nextRow", "next", "row justify-content-center")
         this.makeTag ("div", "nextCol", "nextRow", "col-12")
         this.makeTag ("button", "goButton", "nextCol", "buttonsquare")
+        this.drawText ("Next", "goButton")
         this.makeNextEvent()
 
         this.makeTag ("div", "body", "div1", "container text-center")
@@ -84,6 +87,7 @@ let game = {
         this.makeTag ("div", "footRow", "footCont", "row")
         this.makeTag ("div", "footCol", "footRow", "col")
         this.makeTag ("button", "startButton", "footCol", "buttonRound position-absolute bottom-0 end-0")
+        this.drawText ("<--", "startButton")
         this.makeStartEvent()
     },
     drawPage3: function(){
@@ -96,6 +100,7 @@ let game = {
         this.makeTag ("div", "nextRow", "next", "row justify-content-center")
         this.makeTag ("div", "nextCol", "nextRow", "col-12")
         this.makeTag ("button", "goButton", "nextCol", "buttonsquare")
+        this.drawText ("Next", "goButton")
         this.makeNextEvent()
 
         this.makeTag ("div", "body", "div1", "container text-center")
@@ -110,6 +115,7 @@ let game = {
         this.makeTag ("div", "footRow", "footCont", "row")
         this.makeTag ("div", "footCol", "footRow", "col")
         this.makeTag ("button", "startButton", "footCol", "buttonRound position-absolute bottom-0 end-0")
+        this.drawText ("<--", "startButton")
         this.makeStartEvent()
         
     },
@@ -127,6 +133,7 @@ let game = {
         this.makeTag ("div", "nextRow", "next", "row justify-content-center")
         this.makeTag ("div", "nextCol", "nextRow", "col-12")
         this.makeTag ("button", "goButton", "nextCol", "buttonsquare")
+        this.drawText ("Next", "goButton")
         this.makeNextEvent()
 
         this.makeTag ("div", "body", "div1", "container text-center")
@@ -142,6 +149,7 @@ let game = {
         this.makeTag ("div", "footRow", "footCont", "row")
         this.makeTag ("div", "footCol", "footRow", "col")
         this.makeTag ("button", "startButton", "footCol", "buttonRound position-absolute bottom-0 end-0")
+        this.drawText ("<--", "startButton")
         this.makeStartEvent()
     },
     drawPage5: function(){
@@ -162,6 +170,7 @@ let game = {
         this.makeTag ("div", "footRow", "footCont", "row")
         this.makeTag ("div", "footCol", "footRow", "col")
         this.makeTag ("button", "startButton", "footCol", "buttonRound position-absolute bottom-0 end-0")
+        this.drawText ("<--", "startButton")
         this.makeStartEvent()
     },
     makeTag: function(elem, id, where, type){
