@@ -41,10 +41,11 @@ let state = {
         this.makeTag ("div", "headCol", "headRow", "col-12 title")
         this.drawText("Pick a number from 01 - 99", "headCol")
         
-        this.makeTag ("div", "next", "div1", "container")
+        this.makeTag ("div", "next", "div1", "container text-center")
         this.makeTag ("div", "nextRow", "next", "row justify-content-center")
-        this.makeTag ("div", "nextCol", "nextRow", "col-12")
+        this.makeTag ("div", "nextCol", "nextRow", "col")
         this.makeTag ("button", "goButton", "nextCol", "buttonsquare")
+        this.drawText ("Next", "goButton")
         this.makeNextEvent()
 
         this.makeTag ("div", "body", "div1", "container text-center")
@@ -65,7 +66,7 @@ let state = {
         this.makeTag ("div", "headCol", "headRow", "col-12 title")
         this.drawText("Add both digits together to get a new number", "headCol")
         
-        this.makeTag ("div", "next", "div1", "container")
+        this.makeTag ("div", "next", "div1", "container text-center")
         this.makeTag ("div", "nextRow", "next", "row justify-content-center")
         this.makeTag ("div", "nextCol", "nextRow", "col-12")
         this.makeTag ("button", "goButton", "nextCol", "buttonsquare")
@@ -89,7 +90,7 @@ let state = {
         this.makeTag ("div", "headCol", "headRow", "col-12 title")
         this.drawText("Subtract your new number from the original number", "headCol")
         
-        this.makeTag ("div", "next", "div1", "container")
+        this.makeTag ("div", "next", "div1", "container text-center")
         this.makeTag ("div", "nextRow", "next", "row justify-content-center")
         this.makeTag ("div", "nextCol", "nextRow", "col-12")
         this.makeTag ("button", "goButton", "nextCol", "buttonsquare")
