@@ -2,185 +2,188 @@ let game = {
     currPage: 0,
     update: function () {
         this.clearPage();
-        if (this.currPage === 0){
+        if (this.currPage === 0) {
             this.drawPage0();
-        } else if (this.currPage === 1){
+        } else if (this.currPage === 1) {
             this.drawPage1()
-        } else if (this.currPage === 2){
+        } else if (this.currPage === 2) {
             this.drawPage2()
-        } else if (this.currPage === 3){
+        } else if (this.currPage === 3) {
             this.drawPage3()
-        } else if (this.currPage === 4){
+        } else if (this.currPage === 4) {
             this.drawPage4()
-        } else if (this.currPage === 5){
+        } else if (this.currPage === 5) {
             this.drawPage5()
         }
+        localStorage.setItem("page", this.currPage);
     },
-    clearPage: function(){
+    clearPage: function () {
         let childNodes = div1.childNodes;
         for (let i = childNodes.length - 1; i >= 0; i--) {
             div1.removeChild(childNodes[i]);
         }
     },
-    drawPage0: function(){
-        this.makeTag ("div", "head", "div1", "container text-center")
-        this.makeTag ("div", "headRow", "head", "row justify-content-center")
-        this.makeTag ("div", "headCol", "headRow", "col-12 title")
+    drawPage0: function () {
+        this.makeTag("div", "head", "div1", "container text-center")
+        this.makeTag("div", "headRow", "head", "row justify-content-center")
+        this.makeTag("div", "headCol", "headRow", "col-12 title")
         this.drawText("I can read your mind", "headCol")
-       
+
         this.makeTag("footer", "foot", "div1", "footer")
-        this.makeTag ("div", "footCont", "foot", "container")
-        this.makeTag ("div", "footRow", "footCont", "row")
-        this.makeTag ("div", "footCol", "footRow", "col")
-        this.makeTag ("button", "goButton", "footCol", "buttonRound position-absolute bottom-0 end-0")
-        this.drawText ("Go", "goButton")
+        this.makeTag("div", "footCont", "foot", "container")
+        this.makeTag("div", "footRow", "footCont", "row")
+        this.makeTag("div", "footCol", "footRow", "col")
+        this.makeTag("button", "goButton", "footCol", "buttonRound position-absolute bottom-0 end-0")
+        this.drawText("Go", "goButton")
         this.makeNextEvent()
     },
-    drawPage1: function(){
-        this.makeTag ("div", "head", "div1", "container text-center")
-        this.makeTag ("div", "headRow", "head", "row justify-content-center")
-        this.makeTag ("div", "headCol", "headRow", "col-12 title")
+    drawPage1: function () {
+        this.makeTag("div", "head", "div1", "container text-center")
+        this.makeTag("div", "headRow", "head", "row justify-content-center")
+        this.makeTag("div", "headCol", "headRow", "col-12 title")
         this.drawText("Pick a number from 01 - 99", "headCol")
-        
-        this.makeTag ("div", "next", "div1", "container text-center")
-        this.makeTag ("div", "nextRow", "next", "row justify-content-center")
-        this.makeTag ("div", "nextCol", "nextRow", "col")
-        this.makeTag ("button", "goButton", "nextCol", "buttonsquare")
-        this.drawText ("Next", "goButton")
+
+        this.makeTag("div", "next", "div1", "container text-center")
+        this.makeTag("div", "nextRow", "next", "row justify-content-center")
+        this.makeTag("div", "nextCol", "nextRow", "col")
+        this.makeTag("button", "goButton", "nextCol", "buttonsquare")
+        this.drawText("Next", "goButton")
         this.makeNextEvent()
 
-        this.makeTag ("div", "body", "div1", "container text-center")
-        this.makeTag ("div", "bodyRow", "body", "row justify-content-center")
-        this.makeTag ("div", "bodyCol", "bodyRow", "col-12  body")
-        this.drawText ("when you have your number click next", "bodyCol")
-        
+        this.makeTag("div", "body", "div1", "container text-center")
+        this.makeTag("div", "bodyRow", "body", "row justify-content-center")
+        this.makeTag("div", "bodyCol", "bodyRow", "col-12  body")
+        this.drawText("when you have your number click next", "bodyCol")
+
         this.makeTag("footer", "foot", "div1", "footer")
-        this.makeTag ("div", "footCont", "foot", "container")
-        this.makeTag ("div", "footRow", "footCont", "row")
-        this.makeTag ("div", "footCol", "footRow", "col")
-        this.makeTag ("button", "startButton", "footCol", "buttonRound position-absolute bottom-0 end-0")
-        this.drawText ("<--", "startButton")
+        this.makeTag("div", "footCont", "foot", "container")
+        this.makeTag("div", "footRow", "footCont", "row")
+        this.makeTag("div", "footCol", "footRow", "col")
+        this.makeTag("button", "startButton", "footCol", "buttonRound position-absolute bottom-0 end-0")
+        this.drawText("<--", "startButton")
         this.makeStartEvent()
     },
-    drawPage2: function(){
-        this.makeTag ("div", "head", "div1", "container text-center")
-        this.makeTag ("div", "headRow", "head", "row justify-content-center")
-        this.makeTag ("div", "headCol", "headRow", "col-12 title")
+    drawPage2: function () {
+        this.makeTag("div", "head", "div1", "container text-center")
+        this.makeTag("div", "headRow", "head", "row justify-content-center")
+        this.makeTag("div", "headCol", "headRow", "col-12 title")
         this.drawText("Add both digits together to get a new number", "headCol")
-        
-        this.makeTag ("div", "next", "div1", "container text-center")
-        this.makeTag ("div", "nextRow", "next", "row justify-content-center")
-        this.makeTag ("div", "nextCol", "nextRow", "col-12")
-        this.makeTag ("button", "goButton", "nextCol", "buttonsquare")
-        this.drawText ("Next", "goButton")
+
+        this.makeTag("div", "next", "div1", "container text-center")
+        this.makeTag("div", "nextRow", "next", "row justify-content-center")
+        this.makeTag("div", "nextCol", "nextRow", "col-12")
+        this.makeTag("button", "goButton", "nextCol", "buttonsquare")
+        this.drawText("Next", "goButton")
         this.makeNextEvent()
 
-        this.makeTag ("div", "body", "div1", "container text-center")
-        this.makeTag ("div", "bodyRow", "body", "row justify-content-center")
-        this.makeTag ("div", "bodyCol", "bodyRow", "col-12  body")
-        this.drawText ("Ex: 14 is 1 + 4 = 5", "bodyCol")
-        this.drawText ("", "bodyCol")
-        this.drawText ("click next to proseed", "bodyCol")
-        
+        this.makeTag("div", "body", "div1", "container text-center")
+        this.makeTag("div", "bodyRow", "body", "row justify-content-center")
+        this.makeTag("div", "bodyCol", "bodyRow", "col-12  body")
+        this.drawText("Ex: 14 is 1 + 4 = 5", "bodyCol")
+        this.drawText("", "bodyCol")
+        this.drawText("click next to proseed", "bodyCol")
+
         this.makeTag("footer", "foot", "div1", "footer")
-        this.makeTag ("div", "footCont", "foot", "container")
-        this.makeTag ("div", "footRow", "footCont", "row")
-        this.makeTag ("div", "footCol", "footRow", "col")
-        this.makeTag ("button", "startButton", "footCol", "buttonRound position-absolute bottom-0 end-0")
-        this.drawText ("<--", "startButton")
+        this.makeTag("div", "footCont", "foot", "container")
+        this.makeTag("div", "footRow", "footCont", "row")
+        this.makeTag("div", "footCol", "footRow", "col")
+        this.makeTag("button", "startButton", "footCol", "buttonRound position-absolute bottom-0 end-0")
+        this.drawText("<--", "startButton")
         this.makeStartEvent()
     },
-    drawPage3: function(){
-        this.makeTag ("div", "head", "div1", "container text-center")
-        this.makeTag ("div", "headRow", "head", "row justify-content-center")
-        this.makeTag ("div", "headCol", "headRow", "col-12 title")
+    drawPage3: function () {
+        this.makeTag("div", "head", "div1", "container text-center")
+        this.makeTag("div", "headRow", "head", "row justify-content-center")
+        this.makeTag("div", "headCol", "headRow", "col-12 title")
         this.drawText("Subtract your new number from the original number", "headCol")
-        
-        this.makeTag ("div", "next", "div1", "container text-center")
-        this.makeTag ("div", "nextRow", "next", "row justify-content-center")
-        this.makeTag ("div", "nextCol", "nextRow", "col-12")
-        this.makeTag ("button", "goButton", "nextCol", "buttonsquare")
-        this.drawText ("Next", "goButton")
+
+        this.makeTag("div", "next", "div1", "container text-center")
+        this.makeTag("div", "nextRow", "next", "row justify-content-center")
+        this.makeTag("div", "nextCol", "nextRow", "col-12")
+        this.makeTag("button", "goButton", "nextCol", "buttonsquare")
+        this.drawText("Next", "goButton")
         this.makeNextEvent()
 
-        this.makeTag ("div", "body", "div1", "container text-center")
-        this.makeTag ("div", "bodyRow", "body", "row justify-content-center")
-        this.makeTag ("div", "bodyCol", "bodyRow", "col-12  body")
-        this.drawText ("Ex: 14 - 5 = 9", "bodyCol")
-        this.drawText ("", "bodyCol")
-        this.drawText ("click next to proseed", "bodyCol")
-        
+        this.makeTag("div", "body", "div1", "container text-center")
+        this.makeTag("div", "bodyRow", "body", "row justify-content-center")
+        this.makeTag("div", "bodyCol", "bodyRow", "col-12  body")
+        this.drawText("Ex: 14 - 5 = 9", "bodyCol")
+        this.drawText("", "bodyCol")
+        this.drawText("click next to proseed", "bodyCol")
+
         this.makeTag("footer", "foot", "div1", "footer")
-        this.makeTag ("div", "footCont", "foot", "container")
-        this.makeTag ("div", "footRow", "footCont", "row")
-        this.makeTag ("div", "footCol", "footRow", "col")
-        this.makeTag ("button", "startButton", "footCol", "buttonRound position-absolute bottom-0 end-0")
-        this.drawText ("<--", "startButton")
+        this.makeTag("div", "footCont", "foot", "container")
+        this.makeTag("div", "footRow", "footCont", "row")
+        this.makeTag("div", "footCol", "footRow", "col")
+        this.makeTag("button", "startButton", "footCol", "buttonRound position-absolute bottom-0 end-0")
+        this.drawText("<--", "startButton")
         this.makeStartEvent()
-        
+
     },
-    drawPage4: function(){
-        
+    drawPage4: function () {
+
         this.randomizeSymbols()
         this.fillSymbolArray()
 
-        this.makeTag ("div", "head", "div1", "container text-center")
-        this.makeTag ("div", "headRow", "head", "row justify-content-center")
-        this.makeTag ("div", "headCol", "headRow", "col-12 title")
-        this.formatSymbolArray("headCol")
+        this.makeTag("div", "div2", "div1", "overflow-auto")
+        
+        this.makeTag("div", "head", "div2", "container text-center")
+        this.makeTag("div", "headRow", "head", "row justify-content-center")
+        this.makeTag("div", "headColS", "headRow", "col-12 title overflow-auto ")
+        this.formatSymbolArray("headColS")
 
-        this.makeTag ("div", "next", "div1", "container text-center")
-        this.makeTag ("div", "nextRow", "next", "row justify-content-center")
-        this.makeTag ("div", "nextCol", "nextRow", "col-12")
-        this.makeTag ("button", "goButton", "nextCol", "buttonsquare")
-        this.drawText ("Next", "goButton")
+        this.makeTag("div", "next", "div1", "container text-center")
+        this.makeTag("div", "nextRow", "next", "row justify-content-center")
+        this.makeTag("div", "nextCol", "nextRow", "col-12 position-sticky")
+        this.makeTag("button", "goButton", "nextCol", "buttonsquare")
+        this.drawText("Next", "goButton")
         this.makeNextEvent()
 
-        this.makeTag ("div", "body", "div1", "container text-center")
-        this.makeTag ("div", "bodyRow", "body", "row justify-content-center")
-        this.makeTag ("div", "bodyCol", "bodyRow", "col-12  body")
-        this.drawText ("Find your new number.", "bodyCol")
-        this.drawText ("", "bodyCol")
-        this.drawText ("Note the symbol beside the number", "bodyCol")
-        
-        
+        this.makeTag("div", "body", "div1", "container text-center")
+        this.makeTag("div", "bodyRow", "body", "row justify-content-center")
+        this.makeTag("div", "bodyCol", "bodyRow", "col-12  body")
+        this.drawText("Find your new number.", "bodyCol")
+        this.drawText("", "bodyCol")
+        this.drawText("Note the symbol beside the number", "bodyCol")
+
+
         this.makeTag("footer", "foot", "div1", "footer")
-        this.makeTag ("div", "footCont", "foot", "container")
-        this.makeTag ("div", "footRow", "footCont", "row")
-        this.makeTag ("div", "footCol", "footRow", "col")
-        this.makeTag ("button", "startButton", "footCol", "buttonRound position-absolute bottom-0 end-0")
-        this.drawText ("<--", "startButton")
+        this.makeTag("div", "footCont", "foot", "container")
+        this.makeTag("div", "footRow", "footCont", "row")
+        this.makeTag("div", "footCol", "footRow", "col")
+        this.makeTag("button", "startButton", "footCol", "buttonRound position-absolute bottom-0 end-0")
+        this.drawText("<--", "startButton")
         this.makeStartEvent()
     },
-    drawPage5: function(){
-        this.makeTag ("div", "head", "div1", "container text-center")
-        this.makeTag ("div", "headRow", "head", "row justify-content-center")
-        this.makeTag ("div", "headCol", "headRow", "col-12 title")
+    drawPage5: function () {
+        this.makeTag("div", "head", "div1", "container text-center")
+        this.makeTag("div", "headRow", "head", "row justify-content-center")
+        this.makeTag("div", "headCol", "headRow", "col-12 title")
         this.drawText(this.num0, "headCol")
 
-        this.makeTag ("div", "body", "div1", "container text-center")
-        this.makeTag ("div", "bodyRow", "body", "row justify-content-center")
-        this.makeTag ("div", "bodyCol", "bodyRow", "col-12  body")
-        this.drawText ("Your symbol is:", "bodyCol")
-        this.drawText ("", "bodyCol")
-        this.drawText (this.num0, "bodyCol")
+        this.makeTag("div", "body", "div1", "container text-center")
+        this.makeTag("div", "bodyRow", "body", "row justify-content-center")
+        this.makeTag("div", "bodyCol", "bodyRow", "col-12  body")
+        this.drawText("Your symbol is:", "bodyCol")
+        this.drawText("", "bodyCol")
+        this.drawText(this.num0, "bodyCol")
 
         this.makeTag("footer", "foot", "div1", "footer")
-        this.makeTag ("div", "footCont", "foot", "container")
-        this.makeTag ("div", "footRow", "footCont", "row")
-        this.makeTag ("div", "footCol", "footRow", "col")
-        this.makeTag ("button", "startButton", "footCol", "buttonRound position-absolute bottom-0 end-0")
-        this.drawText ("<--", "startButton")
+        this.makeTag("div", "footCont", "foot", "container")
+        this.makeTag("div", "footRow", "footCont", "row")
+        this.makeTag("div", "footCol", "footRow", "col")
+        this.makeTag("button", "startButton", "footCol", "buttonRound position-absolute bottom-0 end-0")
+        this.drawText("<--", "startButton")
         this.makeStartEvent()
     },
-    makeTag: function(elem, id, where, type){
+    makeTag: function (elem, id, where, type) {
         let cont = document.createElement(elem);
         let out = document.getElementById(where);
         cont.setAttribute("id", id);
         cont.setAttribute("class", type);
         out.appendChild(cont);
     },
-    drawText: function (text, where, type = ""){
+    drawText: function (text, where, type = "") {
         let para = document.createElement("p");
         let node = document.createTextNode(text);
         let out = document.getElementById(where);
@@ -190,14 +193,14 @@ let game = {
     },
     makeStartEvent: function () {
         let startButton = document.getElementById("startButton");
-        startButton.addEventListener("click", function() {
+        startButton.addEventListener("click", function () {
             game.currPage = 0;
             game.update();
         });
     },
     makeNextEvent: function () {
         let goButton = document.getElementById("goButton");
-        goButton.addEventListener("click", function() {
+        goButton.addEventListener("click", function () {
             game.currPage++;
             game.update();
         });
@@ -338,7 +341,7 @@ let game = {
     num7: "",
     num8: "",
 
-    randomizeSymbols: function (){
+    randomizeSymbols: function () {
         this.num0 = this.randomSymbolArray[(Math.floor(Math.random() * this.randomSymbolArray.length))]
         this.num1 = this.randomSymbolArray[(Math.floor(Math.random() * this.randomSymbolArray.length))]
         this.num2 = this.randomSymbolArray[(Math.floor(Math.random() * this.randomSymbolArray.length))]
@@ -349,39 +352,43 @@ let game = {
         this.num7 = this.randomSymbolArray[(Math.floor(Math.random() * this.randomSymbolArray.length))]
         this.num8 = this.randomSymbolArray[(Math.floor(Math.random() * this.randomSymbolArray.length))]
     },
-    fillSymbolArray: function(){
+    fillSymbolArray: function () {
         this.symbolArray = [];
-        for (item in this.noSymbolArray){
-            if(this.noSymbolArray[item] != this.noSymbolArray[item].replace(":0:", this.num0)) {
-            this.symbolArray.push(this.noSymbolArray[item].replace(":0:", this.num0))
-            } else if(this.noSymbolArray[item] != this.noSymbolArray[item].replace(":1:", this.num1)) {
-            this.symbolArray.push(this.noSymbolArray[item].replace(":1:", this.num1))
-            } else if(this.noSymbolArray[item] != this.noSymbolArray[item].replace(":2:", this.num2)) {
-            this.symbolArray.push(this.noSymbolArray[item].replace(":2:", this.num2))
-            } else if(this.noSymbolArray[item] != this.noSymbolArray[item].replace(":3:", this.num3)) {
-            this.symbolArray.push(this.noSymbolArray[item].replace(":3:", this.num3))
-            } else if(this.noSymbolArray[item] != this.noSymbolArray[item].replace(":4:", this.num4)) {
-            this.symbolArray.push(this.noSymbolArray[item].replace(":4:", this.num4))
-            } else if(this.noSymbolArray[item] != this.noSymbolArray[item].replace(":5:", this.num5)) {
-            this.symbolArray.push(this.noSymbolArray[item].replace(":5:", this.num5))
-            } else if(this.noSymbolArray[item] != this.noSymbolArray[item].replace(":6:", this.num6)) {
-            this.symbolArray.push(this.noSymbolArray[item].replace(":6:", this.num6))
-            } else if(this.noSymbolArray[item] != this.noSymbolArray[item].replace(":7:", this.num7)) {
-            this.symbolArray.push(this.noSymbolArray[item].replace(":7:", this.num7))
-            } else if(this.noSymbolArray[item] != this.noSymbolArray[item].replace(":8:", this.num8)) {
-            this.symbolArray.push(this.noSymbolArray[item].replace(":8:", this.num8))
+        for (item in this.noSymbolArray) {
+            if (this.noSymbolArray[item] != this.noSymbolArray[item].replace(":0:", this.num0)) {
+                this.symbolArray.push(this.noSymbolArray[item].replace(":0:", this.num0))
+            } else if (this.noSymbolArray[item] != this.noSymbolArray[item].replace(":1:", this.num1)) {
+                this.symbolArray.push(this.noSymbolArray[item].replace(":1:", this.num1))
+            } else if (this.noSymbolArray[item] != this.noSymbolArray[item].replace(":2:", this.num2)) {
+                this.symbolArray.push(this.noSymbolArray[item].replace(":2:", this.num2))
+            } else if (this.noSymbolArray[item] != this.noSymbolArray[item].replace(":3:", this.num3)) {
+                this.symbolArray.push(this.noSymbolArray[item].replace(":3:", this.num3))
+            } else if (this.noSymbolArray[item] != this.noSymbolArray[item].replace(":4:", this.num4)) {
+                this.symbolArray.push(this.noSymbolArray[item].replace(":4:", this.num4))
+            } else if (this.noSymbolArray[item] != this.noSymbolArray[item].replace(":5:", this.num5)) {
+                this.symbolArray.push(this.noSymbolArray[item].replace(":5:", this.num5))
+            } else if (this.noSymbolArray[item] != this.noSymbolArray[item].replace(":6:", this.num6)) {
+                this.symbolArray.push(this.noSymbolArray[item].replace(":6:", this.num6))
+            } else if (this.noSymbolArray[item] != this.noSymbolArray[item].replace(":7:", this.num7)) {
+                this.symbolArray.push(this.noSymbolArray[item].replace(":7:", this.num7))
+            } else if (this.noSymbolArray[item] != this.noSymbolArray[item].replace(":8:", this.num8)) {
+                this.symbolArray.push(this.noSymbolArray[item].replace(":8:", this.num8))
             }
+
         }
     },
-    formatSymbolArray: function(where) {
-        for (item in this.symbolArray){
-            this.drawText(this.symbolArray[item], where)
-            this.drawText("", where)
+    formatSymbolArray: function (where) {
+        for (item in this.symbolArray) {
+           this.drawText(this.symbolArray[item], where)
         }
+        
     }
 
 }
 
+if (localStorage.getItem("page") != null) {
+    game.currPage = parseInt(localStorage.getItem("page"));
+}
 
 game.update();
 
