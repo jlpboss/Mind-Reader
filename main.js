@@ -127,7 +127,7 @@ let game = {
         this.makeTag ("div", "head", "div1", "container text-center")
         this.makeTag ("div", "headRow", "head", "row justify-content-center")
         this.makeTag ("div", "headCol", "headRow", "col-12 title")
-        this.drawText(this.symbolArray, "headCol")
+        this.formatSymbolArray("headCol")
 
         this.makeTag ("div", "next", "div1", "container text-center")
         this.makeTag ("div", "nextRow", "next", "row justify-content-center")
@@ -371,6 +371,12 @@ let game = {
             } else if(this.noSymbolArray[item] != this.noSymbolArray[item].replace(":8:", this.num8)) {
             this.symbolArray.push(this.noSymbolArray[item].replace(":8:", this.num8))
             }
+        }
+    },
+    formatSymbolArray: function(where) {
+        for (item in this.symbolArray){
+            this.drawText(this.symbolArray[item], where)
+            this.drawText("", where)
         }
     }
 
